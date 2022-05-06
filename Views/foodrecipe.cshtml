@@ -1,0 +1,31 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Foodrecipe>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+<div class="grid-item mb-20">
+    <div>
+        <h1 class="mb-20">@Model.Value("quickViewTitle")</h1>
+        	<div class="mt-20">
+    	    @{
+		        var image = Model.Value<IPublishedContent>("quickViewImage");
+		    }
+		    <img  src="@image.Url()" height="250px" width="500px"/>
+            </div>
+         
+        <div>Ingredienser:</div>    
+        <div><p>@Model.Value("foodRecipeIngredients")</p></div>
+        <div>Gör så här:</div>
+        <div>@Model.Value("foodRecipeDescription")</div>
+    </div>
+</div>
+
+
+
+
+
+
+
